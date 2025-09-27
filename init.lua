@@ -539,6 +539,31 @@ require("lazy").setup({
 						vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 					end
 
+					local hover_timer = nil
+					local hover_delay = 750
+
+					vim.api.nvim_create_autocmd({ "CursorMoved", "InsertEnter" }, {
+						buffer = event.buf,
+						callback = function()
+							if hover_timer then
+								vim.fn.timer_stop(hover_timer)
+								hover_timer = nil
+							end
+						end,
+					})
+
+					vim.api.nvim_create_autocmd("CursorHold", {
+						buffer = event.buf,
+						callback = function()
+							if not hover_timer then
+								hover_timer = vim.fn.timer_start(hover_delay, function()
+									vim.lsp.buf.hover()
+									hover_timer = nil
+								end)
+							end
+						end,
+					})
+
 					-- Rename the variable under your cursor.
 					--  Most Language Servers support renaming across files, etc.
 					map("grn", vim.lsp.buf.rename, "[R]e[n]ame")
