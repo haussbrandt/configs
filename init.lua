@@ -432,31 +432,6 @@ require("lazy").setup({
 						vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 					end
 
-					local hover_timer = nil
-					local hover_delay = 750
-
-					vim.api.nvim_create_autocmd({ "CursorMoved", "InsertEnter" }, {
-						buffer = event.buf,
-						callback = function()
-							if hover_timer then
-								vim.fn.timer_stop(hover_timer)
-								hover_timer = nil
-							end
-						end,
-					})
-
-					vim.api.nvim_create_autocmd("CursorHold", {
-						buffer = event.buf,
-						callback = function()
-							if not hover_timer then
-								hover_timer = vim.fn.timer_start(hover_delay, function()
-									vim.lsp.buf.hover()
-									hover_timer = nil
-								end)
-							end
-						end,
-					})
-
 					-- Rename the variable under your cursor.
 					--  Most Language Servers support renaming across files, etc.
 					map("grn", vim.lsp.buf.rename, "[R]e[n]ame")
@@ -955,7 +930,7 @@ require("lazy").setup({
 	--    This is the easiest way to modularize your config.
 	--
 	--  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-	-- { import = 'custom.plugins' },
+	-- { import = "plugins" },
 	--
 	-- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
 	-- Or use telescope!
