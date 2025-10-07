@@ -293,6 +293,10 @@ require("lazy").setup({
 
 			-- Useful for getting pretty icons, but requires a Nerd Font.
 			{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
+			{
+				"nvim-telescope/telescope-file-browser.nvim",
+				dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+			},
 		},
 		config = function()
 			-- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -376,6 +380,11 @@ require("lazy").setup({
 					prompt_title = "Live Grep in Open Files",
 				})
 			end, { desc = "[S]earch [/] in Open Files" })
+
+			require("telescope").load_extension("file_browser")
+			vim.keymap.set("n", "<space>fb", function()
+				require("telescope").extensions.file_browser.file_browser()
+			end)
 
 			-- Shortcut for searching your Neovim configuration files
 			vim.keymap.set("n", "<leader>sn", function()
@@ -834,7 +843,6 @@ require("lazy").setup({
 			-- - sd'   - [S]urround [D]elete [']quotes
 			-- - sr)'  - [S]urround [R]eplace [)] [']
 			require("mini.surround").setup()
-			require("mini.files").setup()
 
 			-- Simple and easy statusline.
 			--  You could remove this setup call if you don't like it,
