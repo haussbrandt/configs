@@ -635,6 +635,7 @@ require("lazy").setup({
 				"stylua", -- Used to format Lua code
 				"goimports",
 				"gofumpt",
+				"ruff",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -685,11 +686,17 @@ require("lazy").setup({
 					}
 				end
 			end,
+			formatters = {
+				ruff_format = {
+					command = "ruff",
+					args = { "format", "--stdin-filename", "$FILENAME", "-" },
+				},
+			},
 			formatters_by_ft = {
 				lua = { "stylua" },
 				go = { "goimports", "gofumpt" },
 				-- Conform can also run multiple formatters sequentially
-				-- python = { "isort", "black" },
+				python = { "isort", "ruff_format" },
 				--
 				-- You can use 'stop_after_first' to run the first available formatter from the list
 				-- javascript = { "prettierd", "prettier", stop_after_first = true },
