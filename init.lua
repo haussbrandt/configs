@@ -441,6 +441,11 @@ require("lazy").setup({
 						vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 					end
 
+					local client = vim.lsp.get_client_by_id(event.data.client_id)
+					if client and client.name == "ruff" then
+						client.server_capabilities.diagnosticProvider = false
+					end
+
 					-- Rename the variable under your cursor.
 					--  Most Language Servers support renaming across files, etc.
 					map("grn", vim.lsp.buf.rename, "[R]e[n]ame")
@@ -590,7 +595,8 @@ require("lazy").setup({
 			local servers = {
 				-- clangd = {},
 				gopls = {},
-				-- pyright = {},
+				basedpyright = {},
+				ruff = {},
 				-- rust_analyzer = {},
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 				--
@@ -635,6 +641,7 @@ require("lazy").setup({
 				"stylua", -- Used to format Lua code
 				"goimports",
 				"gofumpt",
+				"basedpyright",
 				"ruff",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
@@ -686,12 +693,6 @@ require("lazy").setup({
 					}
 				end
 			end,
-			formatters = {
-				ruff_format = {
-					command = "ruff",
-					args = { "format", "--stdin-filename", "$FILENAME", "-" },
-				},
-			},
 			formatters_by_ft = {
 				lua = { "stylua" },
 				go = { "goimports", "gofumpt" },
