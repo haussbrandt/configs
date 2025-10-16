@@ -1,2 +1,2 @@
-cp ~/.config/nvim/init.lua . 
-cp -r ~/.config/nvim/lua/ .
+cp ~/.config/nvim/init.lua ./nvim/ 
+cp -r ~/.config/nvim/lua/ ./nvim/
