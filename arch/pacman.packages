@@ -1,3 +1,4 @@
+alacritty
 avahi
 base-devel
 bash-completion
@@ -54,6 +55,7 @@ neovim
 obsidian
 playerctl
 plocate
+python-terminaltexteffects
 qt5-wayland
 ripgrep
 satty
