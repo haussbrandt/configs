@@ -1,0 +1,46 @@
+window#waybar {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+* {
+  color: rgba(255, 255, 255, 1);
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: CaskaydiaMono Nerd Font;
+  font-size: 12px;
+}
+
+#clock, #tray {
+	background-color: transparent;
+}
+
+.modules-left {
+  margin-left: 16px;
+}
+
+.modules-right {
+  margin-right: 16px;
+}
+
+
+#workspaces button {
+  all: initial;
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 9px;
+}
+
+#tray,
+#cpu,
+#battery,
+#network,
+#bluetooth,
+#pulseaudio {
+min-width: 12px;
+  margin: 0 7.5px;
+}
+
+tooltip {
+  padding: 2px;
+}
