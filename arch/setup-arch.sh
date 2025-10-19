@@ -28,3 +28,4 @@ sudo usermod -aG docker $USER
 newgrp docker
 
 ./mimetypes.sh
+./printers.sh
