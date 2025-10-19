@@ -11,3 +11,4 @@ sudo cp -R ./bin/* /bin/
 
 mkdir -p ~/.local/share/alacritty
 cp -f ./screensaver.toml ~/.local/share/alacritty
+cp -f ./screensaver.txt ~/.config/screensaver.txt
