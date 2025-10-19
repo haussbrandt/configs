@@ -8,6 +8,11 @@
 PROMPT_DIRTRIM=2
 PS1='[\u@\h \w]\$ '
 
+force_color_prompt=yes
+color_prompt=yes
+shopt -s histappend
+HISTCONTROL=ignoreboth
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias vi='nvim'
@@ -21,9 +26,5 @@ open() {
 }
 
 export EDITOR="nvim"
+export HYPRSHOT_DIR="$HOME/screenshots"
 
-force_color_prompt=yes
-color_prompt=yes
-
-shopt -s histappend
-HISTCONTROL=ignoreboth
