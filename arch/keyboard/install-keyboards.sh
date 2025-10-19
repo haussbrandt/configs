@@ -1,8 +1,10 @@
 #!/bin/bash
 
 sudo cp -f ./es_based /usr/share/X11/xkb/symbols/es_based
-rm -rf ~/.config/fcitx5/
-sudo cp -rf ./fcitx5/ ~/.config/
+sudo rm -rf ~/.config/fcitx5/
+cp -rf ./fcitx5/ ~/.config/
+mkdir -p ~/.local/share/fcitx5/themes/catpuccin-blue/
+cp -r ./theme/* ~/.local/share/fcitx5/themes/catpuccin-blue/
 
 XML_FILE="/usr/share/X11/xkb/rules/evdev.xml"
 LAYOUT_NAME="es_based"

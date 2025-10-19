@@ -4,7 +4,7 @@ Name=Default
 # Layout
 Default Layout=pl
 # Default Input Method
-DefaultIM=keyboard-es_based
+DefaultIM=pl
 
 [Groups/0/Items/0]
 # Name
