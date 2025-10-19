@@ -4,3 +4,4 @@ cp /etc/pacman.conf .
 cp /etc/sddm.conf.d/autologin.conf .
 cp ~/.bashrc .
 cp ~/.inputrc .
+cp -R ~/.config/mako/* ./mako

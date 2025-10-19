@@ -6,3 +6,6 @@ sudo cp -f ./pacman.conf /etc/pacman.conf
 sudo cp -f ./autologin.conf /etc/sddm.conf.d/autologin.conf
 cp ./.bashrc ~/.bashrc
 cp ./.inputrc ~/.inputrc
+rm -rf ~/.config/mako
+mkdir ~/.config/mako
+cp -rf ./mako/* ~/.config/mako
