@@ -8,14 +8,6 @@ xdg-mime default imv.desktop image/webp
 xdg-mime default imv.desktop image/bmp
 xdg-mime default imv.desktop image/tiff
 
-# Open PDFs with Chrome
-xdg-mime default chrome-stable.desktop application/pdf
-
-# Use Chromium as the default browser
-xdg-settings set default-web-browser chrome-stable.desktop
-xdg-mime default chrome-stable.desktop x-scheme-handler/http
-xdg-mime default chrome-stable.desktop x-scheme-handler/https
-
 # Open video files with mpv
 xdg-mime default mpv.desktop video/mp4
 xdg-mime default mpv.desktop video/x-msvideo
