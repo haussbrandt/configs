@@ -9,3 +9,7 @@ cp ./.inputrc ~/.inputrc
 rm -rf ~/.config/mako
 mkdir ~/.config/mako
 cp -rf ./mako/* ~/.config/mako
+rm -rf ~/.config/walker
+mkdir ~/.config/walker
+cp -rf ./walker/* ~/.config/walker
+
