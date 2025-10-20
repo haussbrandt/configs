@@ -76,6 +76,7 @@ tzupdate
 ufw
 ufw-docker
 unzip
+uv
 walker-bin
 waybar
 wf-recorder
