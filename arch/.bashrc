@@ -28,3 +28,4 @@ open() {
 export EDITOR="nvim"
 export HYPRSHOT_DIR="$HOME/screenshots"
 
+export PATH=$PATH:$HOME/go/bin
