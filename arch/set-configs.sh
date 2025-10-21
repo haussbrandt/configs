@@ -12,4 +12,4 @@ cp -rf ./mako/* ~/.config/mako
 rm -rf ~/.config/walker
 mkdir ~/.config/walker
 cp -rf ./walker/* ~/.config/walker
-
+sudo cp -rf ./f1_layout_script.sh /usr/local/bin/f1_layout_script.sh 
