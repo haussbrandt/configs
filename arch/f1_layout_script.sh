@@ -4,12 +4,12 @@
 # Format: "pattern"="workspace,monitor_index,x_pct,y_pct,w_pct,h_pct"
 declare -A WINDOW_CONFIGS=(
     # Workspace 3 - 2x3 grid on monitor 0 (split into 3 columns and 2 rows)
-    [".*F1 Live.*"]="3,0,0,0,50,50"
-    [".*Data Channel.*"]="3,0,0,50,50,50"
-    [".*Track Map.*"]="3,0,50,0,25,50"
-    [".*Max Verstappen.*"]="3,0,50,50,25,50"
-    [".*Lando Norris.*"]="3,0,75,0,25,50"
-    [".*Oscar Piastri.*"]="3,0,75,50,25,50"
+    [".*F1 Live.*"]="3,0,0,0,34,50"
+    [".*Data Channel.*"]="3,0,0,50,34,50"
+    [".*Track Map.*"]="3,0,34,0,33,50"
+    [".*Max Verstappen.*"]="3,0,34,50,33,50"
+    [".*Lando Norris.*"]="3,0,67,0,33,50"
+    [".*Oscar Piastri.*"]="3,0,67,50,33,50"
     
     # Workspace 4 - vertical split into thirds on monitor 1
     [".*Race Trace.*"]="4,1,0,0,100,33"
