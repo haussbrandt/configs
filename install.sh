@@ -7,4 +7,4 @@ if grep -q 'Ubuntu' /etc/os-release; then
 	ln -s $(which fdfind) ~/.local/bin/fd
 fi
 
-cp -r nvim "${XDG_CONFIG_HOME:-$HOME/.config}"/
+cp -r nvim "${XDG_CONFIG_HOME:-$HOME/.config}"
